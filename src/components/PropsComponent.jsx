@@ -12,6 +12,10 @@ function PropsComponent({ name, hobby }) {
 
       {/* Passing different props */}
       <ChildComponent name="Another User" hobby="Reading" />
+
+      <LayoutComponent>
+        <p>Hello</p>
+      </LayoutComponent>
     </div>
   );
 }
@@ -22,6 +26,16 @@ function ChildComponent(props) {
     <div className="child-component">
       <p>Hello, {props.name}!</p>
       <p>I heard you like {props.hobby}</p>
+    </div>
+  );
+}
+
+// Child component that receives props and children
+function LayoutComponent(props) {
+  return (
+    <div className="layout-component">
+      <h3>Layout Component</h3>
+      {props.children}
     </div>
   );
 }
